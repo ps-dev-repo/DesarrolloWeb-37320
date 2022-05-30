@@ -10,8 +10,10 @@
     
     --color-gris-1: 186, 186, 186;
     --color-gris-2: 150, 150, 150;
-    --color-gris-3: 30,30,30;   /* --color-gris-2 * 20%; */
+    /* 👇🏻 --color-gris-2 * 20%; */
+    --color-gris-3: 30,30,30;
     --color-gris-4: gray;
+    --color-gris-4: rgb(128, 128, 128);
     --color-gris-5: 160, 160, 160;
     
     --color-h2: rgb(var(--color-2), 0.9);
@@ -410,9 +412,24 @@ footer>div {
 }
 
 footer>div>a {
-    padding: 0 4%;
+    /* padding: 0 4%; */
     padding: 1% 4%;
     display: flex;
+}
+
+footer>div>a>span,
+footer>div>a>i{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+footer>div>a>i>svg {
+    height: 25px;
+    width: 25px;
+    color: rgb(var(--color-gris-1));
+}
+footer>div>a:hover>i>svg {
+    color: var(--gradiente-fondo-h2-1);
 }
 
 footer #derechosReservados p {

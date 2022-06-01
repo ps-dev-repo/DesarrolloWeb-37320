@@ -223,14 +223,13 @@ section#contacto>div>div>img {
 }
 
 
-
 section>div>ul{
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     margin-left: 5%;
-    justify-items: center;
+    justify-items: stretch;
     
     /* ???: cómo evitar que sobresalga por los costados en pantalla
     MUY angosta ??? */
@@ -244,8 +243,40 @@ section#proyectosLaborales>div>ul {
 section#experiencia>div>ul>li>ul ,
 section>div>ul>li>ul {
     list-style-image: none;
-    list-style-type: none;
-    padding-left: 1rem;
+    --estilo-lista-dentro-lista: none;
+    list-style-type: var(--estilo-lista-dentro-lista);
+    padding-left: 0.5rem;
+}
+section>div>ul>li>ul>li::first-letter {
+    padding-left: 0.5rem;
+}
+
+section#experiencia>div>ul>li:nth-child(3)>ul {
+    --estilo-lista-dentro-lista: "•"
+}
+
+section#experiencia>div>ul>li:nth-child(4)>ul {
+    --estilo-lista-dentro-lista: "•"
+}
+
+section#experiencia>div>ul>li:nth-child(5)>ul {
+    --estilo-lista-dentro-lista: "-"
+}
+
+section#proyectosLaborales>div>ul>li:nth-child(2)>ul {
+    --estilo-lista-dentro-lista: "•"
+}
+
+section#proyectosLaborales>div>ul>li:nth-child(3)>ul {
+    --estilo-lista-dentro-lista: "*"
+}
+
+section#proyectosLaborales>div>ul>li:nth-child(4)>ul {
+    --estilo-lista-dentro-lista: "-"
+}
+
+section#proyectosLaborales>div>ul>li:nth-child(5)>ul {
+    --estilo-lista-dentro-lista: "-"
 }
 
 

@@ -1,4 +1,4 @@
-/* @import "./debugging.css"; */
+@import "./debugging.css";
 :root {
     --color-texto: rgb(147, 125, 209);
     /* color: rgb(179, 152, 253);  /* color para probar texto */
@@ -49,6 +49,8 @@ body {
     grid-template-rows: auto auto auto;
 }
 
+
+/* ################# NAVBAR ################# */
 header {
     background-color: rgb(var(--color-gris-1));
     position: sticky;
@@ -81,13 +83,12 @@ header nav {
 header nav ul {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    text-align: center;
     height: 100%;
 }
 header nav ul li {
     display: flex;
-    background-color: rgb(var(--color-gris-1)); /* revisar luego*/
-    /* align-items: center; */
+    background-color: rgb(var(--color-gris-1));
+    text-align: center;
 }
 
 header nav ul li a {
@@ -114,12 +115,11 @@ header>nav>input[type="checkbox"]{
 header>nav>label[for="hamburger_chk"] {
     display: none;
 }
+/* ----------------- NAVBAR ----------------- */
 
 
 
-/* ####################### */
-
-
+/* ################## MAIN ################## */
 main {
     color: var(--color-texto);
     
@@ -143,6 +143,15 @@ h2 {
         background-image: linear-gradient(-45deg, var(--gradiente-fondo-h2-1), var(--gradiente-fondo-h2-2));
         color: transparent;
     }
+}
+
+h3 {
+    padding-block: 2%;
+}
+
+h4 {
+    text-transform: uppercase;
+    padding-block: 2%;
 }
 
 #imagenPerfil {
@@ -178,7 +187,6 @@ h2 {
     100% {border-radius: 48%};
 }
 
-
 section {
     padding: 15px 5px;
 }
@@ -196,12 +204,11 @@ section>div>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 10rem;
+    width: 15rem;
     min-width: min-content;
     flex-grow: 1;
     margin: 2.5% 5%;
 }
-
 
 section>div>div img, 
 section>div>div video {
@@ -212,6 +219,7 @@ section>div>div video {
     align-self: center;
     object-fit: cover;
     box-shadow: 0 0 20px -5px;
+    margin-inline: 15px;
 }
 
 section>div#proyectos_personales_1>div img {
@@ -326,9 +334,6 @@ section>div>div form *{
 }
 
 
-/* ####################### */
-
-/* @media screen and (max-width: 360px) { */
 @media screen and (max-width: 414px) {
     header h2 {
         font-size: x-large;
@@ -415,11 +420,11 @@ section>div>div form *{
     
 
 }
+/* ------------------ MAIN ------------------ */
 
 
-/* ####################### */
 
-
+/* ################# FOOTER ################# */
 footer {
     /* no uso height por ahora */
     min-height: 40px;
@@ -445,7 +450,7 @@ footer>div {
 
 footer>div>a {
     /* padding: 0 4%; */
-    padding: 1% 4%;
+    padding: min(1%, 5px) 4%;
     display: flex;
 }
 
@@ -466,4 +471,7 @@ footer>div>a:hover>i>svg {
 
 footer #derechosReservados p {
     text-align: center;
+    padding-block: 3%;
+    padding-block: min(3%, 10px);
 }
+/* ----------------- FOOTER ----------------- */

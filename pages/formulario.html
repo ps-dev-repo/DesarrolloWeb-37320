@@ -18,21 +18,28 @@
 </head>
 
 <body>
-    <header id="headerId">
-        <h2 class="mb-0">Paolo Sartori</h2>
-        <nav>
-            <input type="checkbox" name="hamburger_chk" id="hamburger_chk">
-            <label for="hamburger_chk" class="lbl_chk">
-                <hr>
-                <hr>
-                <hr>
-            </label>
-            <ul class="mb-0">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../pages/proyectos.html">Proyectos</a></li>
-                <li><a href="../pages/formulario.html">Contacto</a></li>
-            </ul>
-        </nav>
+    <header id="headerBoots" class="sticky-top">
+            <nav class="navbar navbar-expand-md py-1 py-md-0 navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand p-2" href="../index.html"><h2 class="mb-0 mx-1">Paolo Sartori</h2></a>
+                    <button class="navbar-toggler boton_navbarBoots" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link p-md-3 px-4 rounded anchor_headerBoots" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link p-md-3 px-4 rounded anchor_headerBoots" href="../pages/proyectos.html">Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link p-md-3 px-4 rounded anchor_headerBoots" href="../pages/formulario.html">Contacto</a></li>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </nav>
     </header>
     <main>
         <section id="contacto">
@@ -60,7 +67,7 @@
                             <label for="input_mensaje" class="form-label">Mensaje</label>
                             <textarea class="form-control" name="input_mensaje" id="input_mensaje" cols="5" rows="5" placeholder="Mensaje" required></textarea>
                         </div>
-                        <div class="form-group d-flex flex-wrap my-4 botones_contacto">
+                        <div class="form-group d-flex flex-wrap mt-4 mb-2 botones_contacto">
                             <input type="reset" class="btn flex-grow-1 mx-1" value="Vaciar formulario">
                             <input type="submit" class="btn flex-grow-1 mx-1" value="Enviar Mensaje">
                         </div>
@@ -69,7 +76,7 @@
             </div>
         </section>
     </main>
-    <footer id="footerId">
+    <footer id="footerId" class="mt-5">
         <div id="derechosReservados">
             <p class="mb-0">©Todos los derechos reservados</p>
         </div>
@@ -98,7 +105,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>

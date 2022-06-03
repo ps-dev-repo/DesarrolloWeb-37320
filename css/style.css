@@ -341,7 +341,7 @@ section>div>div form *{
     
     header>nav{
         position: absolute;
-        /* right: 0px; */
+        right: 0px;
         top: 0;
         bottom: 0;
         display: flex;
@@ -369,7 +369,7 @@ section>div>div form *{
         margin: 2px;
         padding: 2px;
         height: 95%;
-        border: 1.5px solid var(--color-gris-4);
+        border: 1.75px solid var(--color-gris-4);
         border-radius: 5px;
         cursor: pointer;
         
@@ -407,9 +407,14 @@ section>div>div form *{
         transform: translateY(-7px) rotate(-45deg);
     }
     
+    header>nav>ul>li>a{
+        padding-block: 0.25rem;
+    }
+
     section>div>ul{
         /* "!important" para que pise la especificidad de las reglas Desktop fuera de la media query */
         grid-template-columns: 1fr !important;
+        justify-items: center;
     }
 
     main>section>h2 {

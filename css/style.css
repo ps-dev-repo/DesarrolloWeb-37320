@@ -42,7 +42,6 @@ body {
     background-color: rgb(0, 0, 0,0.95);
     box-sizing: border-box;
     
-    /* GRID, aunque no es necesario en verdad */
     display: grid;
     min-height: 100vh;
     grid-template-columns: 100%;
@@ -76,22 +75,22 @@ header h2 {
     }
 }
 
-header nav {
+header>nav>{
     min-width: max-content;
 }
 
-header nav ul {
+header>nav>ul {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     height: 100%;
 }
-header nav ul li {
+header>nav>ul>li {
     display: flex;
     background-color: rgb(var(--color-gris-1));
     text-align: center;
 }
 
-header nav ul li a {
+header>nav>ul>li a {
     text-decoration: none;
     font-family: monospace;
     text-transform: uppercase;
@@ -101,8 +100,8 @@ header nav ul li a {
     color: var(--color-texto);
     width: 100%;
 }
-header nav ul li a:hover,
-header nav ul li a:focus {
+header>nav>ul>li a:hover,
+header>nav>ul>li a:focus {
     text-decoration: underline;
     background-color: rgba(255, 255, 255, 0.3);
     background-image: linear-gradient(to top, var(--gradiente-nav-1),var(--gradiente-nav-2));
@@ -123,12 +122,11 @@ header>nav>label[for="hamburger_chk"] {
 main {
     color: var(--color-texto);
     
-    /* para que quede más lindo, y mejor espaciadas las cosas */
+    /* para que quede más lindo, y mejor espaciadas la web */
     max-width: 1000px;
 
     justify-self: center;
     width: 100%;
-    
 }
 
 h2 {
@@ -250,7 +248,6 @@ section#proyectosLaborales>div>ul {
 }
 section#experiencia>div>ul>li>ul ,
 section>div>ul>li>ul {
-    list-style-image: none;
     --estilo-lista-dentro-lista: none;
     list-style-type: var(--estilo-lista-dentro-lista);
     padding-left: 0.5rem;
@@ -412,8 +409,7 @@ section>div>div form *{
     }
 
     section>div>ul{
-        /* "!important" para que pise la especificidad de las reglas Desktop fuera de la media query */
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
         justify-items: center;
     }
 
@@ -454,8 +450,7 @@ footer>div {
 }
 
 footer>div>a {
-    /* padding: 0 4%; */
-    padding: min(1%, 5px) 4%;
+    padding: min(3%, 5px) 4%;
     display: flex;
 }
 

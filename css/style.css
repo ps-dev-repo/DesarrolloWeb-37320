@@ -1,6 +1,5 @@
 :root {
     --color-texto: rgb(147, 125, 209);
-    /* color: rgb(179, 152, 253);  /* color para probar texto */
     
     --color-1: 155, 55, 255;
     --color-2: 199, 179, 255;
@@ -23,8 +22,7 @@
     --gradiente-borde-2: rgba(var(--color-2));
     --gradiente-nav-1:   rgba(var(--color-1), 0.4) 0%;
     --gradiente-nav-2:   rgb(var(--color-3), 0.05) 40%;
-    --border-perfil:     rgba(var(--color-5)); /* ex-H2 ex-colorBotón */
-    /* --background-intercalado: var(--color-gris-2),0.2; */
+    --border-perfil:     rgba(var(--color-5));
     --background-intercalado: var(--color-gris-3);
     --fondo: rgba(var(--color-gris-3),0.9);
     
@@ -228,7 +226,6 @@ section#contacto>div>div>img {
     display: block;
 }
 
-
 section>div>ul{
     flex-grow: 1;
     display: grid;
@@ -236,15 +233,11 @@ section>div>ul{
     gap: 40px;
     margin-left: 5%;
     justify-items: stretch;
-    
-    /* ???: cómo evitar que sobresalga por los costados en pantalla
-    MUY angosta ??? */
 }
 
 section#experiencia>div>ul>li,
 section#proyectosLaborales>div>ul {
-    list-style-type: '⩺  ';   /* otra opción */
-    /* list-style-image: url('../assets/img/10x10.png'); */
+    list-style-type: '⩺  ';
 }
 section#experiencia>div>ul>li>ul ,
 section>div>ul>li>ul {
@@ -345,6 +338,7 @@ section>div>div form *{
         align-items: center;
         width: 100%;
     }
+
     header>nav>ul {
         display: block;
         position: absolute;
@@ -355,11 +349,12 @@ section>div>div form *{
         transition: transform 0.5s ease-in-out, opacity 0.5s ease-in;
         transform: translateY(-50%) scaleY(0);
     }
+
     header>nav>input:checked ~ ul {
         opacity: 1;
-        /* transition: transform 0.5s ease-in-out, opacity 0.75s linear; */
         transform: translateY(0px) scaleY(1);
     }
+
     header>nav>label[for="hamburger_chk"] {
         position: absolute;
         right: 0;
@@ -375,12 +370,13 @@ section>div>div form *{
         justify-content: space-around;
         align-items: center;
     }
+
     @supports (aspect-ratio: 1 / 1) {
         header>nav>label[for="hamburger_chk"] {
             aspect-ratio: 1 / 1;
         }
     }
-    
+
     header>nav>label[for="hamburger_chk"]>hr {
         width: 20px;
         height: 4px;
@@ -391,19 +387,22 @@ section>div>div form *{
         transition: transform 0.5s ease-in-out;
         transform: rotate(0deg);
     }
-    
+
     header>nav>input:checked + label[for="hamburger_chk"]>hr{
         border: 1px solid var(--color-gris-4);
         background-color: var(--color-gris-4);
         transform: translateY(+7px) rotate(+45deg);
     }
+
     header>nav>input:checked + label[for="hamburger_chk"]>hr:nth-child(2){
         opacity: 0;
     }
+
     header>nav>input:checked + label[for="hamburger_chk"]>hr:last-child{
         transform: translateY(-7px) rotate(-45deg);
     }
-    
+
+
     header>nav>ul>li>a{
         padding-block: 0.25rem;
     }
@@ -417,9 +416,6 @@ section>div>div form *{
         text-align: center;
         display: block;
     }
-    
-    
-
 }
 /* ------------------ MAIN ------------------ */
 

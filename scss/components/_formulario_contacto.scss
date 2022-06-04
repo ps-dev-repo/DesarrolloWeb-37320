@@ -1,0 +1,44 @@
+
+section>div>div>form#formulario_contacto {
+    display: flex; 
+    flex-direction: column;
+
+    * {
+        border-radius: 5px;
+        // margin: 5px;
+        padding: 5px;
+    }
+
+    /* propiedades particulares para los botones del form */
+    &>div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-self: space-between;
+        margin-top: 10px;
+
+        &>input[type=submit] {
+            background-color: var(--gradiente-borde-1);
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+            flex-grow: 1;
+            box-shadow: 0px 0px 7px var(--color-texto);
+            
+            &:hover{
+                background-color: var(--gradiente-fondo-h2-1);
+                background-image: url("https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/61f116f06248585a2739061f_Button%20BG.png");
+                background-size: cover;
+            }
+        }
+
+        &>input[type=reset] {
+            @extend [type=submit];
+            
+            &:hover{
+            background-color: rgba(var(--color-3));
+            background-image: url("https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/61f116f06248585a2739061f_Button%20BG.png");
+            }
+        }
+    }
+}

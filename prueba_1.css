@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  }
+  
+  fieldset, .div_labels {
+    height: 360px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid greenyellow;
+  }
+  .div_labels{
+    height: auto;
+    
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .label{
+    width: 50px;
+    height: 50px;
+    /* margin: 20px; */
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  fieldset input[type="radio"]{
+    display: none;
+  }
+
+  fieldset div {
+    /* width: 300px; */
+    height: 300px;
+    border-radius: 10px;
+    
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    display: none;
+  }
+
+  fieldset>input:checked + div {
+    background-color: yellow !important;
+    border: 2px solid orange;
+    display: flex;
+  }
+
+
+  
+  /* .slider > a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+  }
+  .slider > a:active {
+    top: -5px;
+  }
+  .slider > a:focus {
+    background: #000;
+  } */
+  
+  
+  html, body {
+    height: 100%;
+    /* overflow: hidden; */
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #74ABE2, #5563DE);
+    font-family: 'Ropa Sans', sans-serif;
+  }

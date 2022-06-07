@@ -4,3 +4,4 @@ node_modules/
 package.json
 prueba*.*
 .vscode/settings.json
+css/main.css.map

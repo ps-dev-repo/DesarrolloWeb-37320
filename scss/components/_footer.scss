@@ -1,0 +1,50 @@
+/* ################# FOOTER ################# */
+footer {
+    /* no uso height por ahora */
+    min-height: 40px;
+    background-color: var(--color-gris-4);
+    position: sticky;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: center;
+
+    #derechosReservados p {
+        text-align: center;
+        padding-block: 3%;
+        padding-block: min(3%, 10px);
+    }
+
+    &>div {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        min-width: 50%;
+
+        &>a {
+            padding: min(3%, 7.5px) 4%;
+            display: flex;
+
+            &>i{
+                display: flex;
+                justify-self: center;
+                align-self: center;
+
+                &>svg {
+                    height: 25px;
+                    width: 25px;
+                    color: rgb(var(--color-gris-1));
+                }
+            }
+            
+            &:hover>i>svg {
+                color: var(--gradiente-fondo-h2-1);
+            }
+        }
+    }
+}
+/* ----------------- FOOTER ----------------- */

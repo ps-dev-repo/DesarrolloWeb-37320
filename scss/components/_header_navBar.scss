@@ -1,0 +1,155 @@
+/* ################# NAVBAR ################# */
+header {
+    background-color: rgb(var(--color-gris-1));
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    h2 {
+        color: black;
+        color: var(--gradiente-fondo-h2-1);
+        font-size: xx-large;
+        background-image: unset;
+        align-self: center;
+
+        @supports (-webkit-background-clip: text){
+            -webkit-background-clip: text;
+            background-image: url("https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/61f116f06248585a2739061f_Button%20BG.png");
+            color: rgb(0, 0, 0, 0.25);
+        }
+    }
+    
+    &>nav{
+        min-width: max-content;
+        
+        /* menú hamburguesa */ 
+        &>input[type="checkbox"]{
+            display: none;
+        }
+        &>label[for="hamburger_chk"] {
+            display: none;
+        }
+        /* ---------------- */
+        
+        &>ul {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            height: 100%;
+
+            &>li {
+                display: flex;
+                background-color: rgb(var(--color-gris-1));
+                text-align: center;
+
+                a {
+                    text-decoration: none;
+                    font-family: monospace;
+                    text-transform: uppercase;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    padding: 0.5em;
+                    color: var(--color-texto);
+                    width: 100%;
+
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
+                        background-color: rgba(255, 255, 255, 0.3);
+                        background-image: linear-gradient(to top, var(--gradiente-nav-1),var(--gradiente-nav-2));
+                        box-shadow: 0px 1px 12px 0px;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}
+
+
+
+
+
+/* ----------------- NAVBAR ----------------- */
+
+@media screen and (max-width: 414px) {
+    header h2 {
+        font-size: x-large;
+    }
+    
+    header>nav{
+        position: absolute;
+        right: 0px;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    header>nav>ul {
+        display: block;
+        position: absolute;
+        height: auto;
+        right: 0;
+        top: 100%;
+        opacity: 0;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in;
+        transform: translateY(-50%) scaleY(0);
+    }
+    header>nav>input:checked ~ ul {
+        opacity: 1;
+        /* transition: transform 0.5s ease-in-out, opacity 0.75s linear; */
+        transform: translateY(0px) scaleY(1);
+    }
+    header>nav>label[for="hamburger_chk"] {
+        position: absolute;
+        right: 0;
+        margin: 2px;
+        padding: 2px;
+        height: 95%;
+        border: 1.75px solid var(--color-gris-4);
+        border-radius: 5px;
+        cursor: pointer;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    @supports (aspect-ratio: 1 / 1) {
+        header>nav>label[for="hamburger_chk"] {
+            aspect-ratio: 1 / 1;
+        }
+    }
+    
+    header>nav>label[for="hamburger_chk"]>hr {
+        width: 20px;
+        height: 4px;
+        border-radius: 15px;
+        background-color: rgb(var(--color-gris-2));
+        background-color: var(--color-gris-4);
+        border: 1.5px solid rgba(var(--color-gris-2));
+        transition: transform 0.5s ease-in-out;
+        transform: rotate(0deg);
+    }
+    
+    header>nav>input:checked + label[for="hamburger_chk"]>hr{
+        border: 1px solid var(--color-gris-4);
+        background-color: var(--color-gris-4);
+        transform: translateY(+7px) rotate(+45deg);
+    }
+    header>nav>input:checked + label[for="hamburger_chk"]>hr:nth-child(2){
+        opacity: 0;
+    }
+    header>nav>input:checked + label[for="hamburger_chk"]>hr:last-child{
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    header>nav>ul>li>a{
+        padding-block: 0.25rem;
+    }
+
+}

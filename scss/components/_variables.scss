@@ -1,0 +1,40 @@
+
+$gradiente-borde-1: rgba(var(--color-1), 0.7);
+$color-texto: rgb(147, 125, 209);
+$gradiente-fondo-h2-1: rgb(var(--color-1));
+$color-3: rgba(128, 0, 255);
+
+/* TODO: convertir en variables sass */
+:root {
+    --color-texto: rgb(147, 125, 209);
+    /* color: rgb(179, 152, 253);  /* color para probar texto */
+    
+    --color-1: 155, 55, 255;
+    --color-2: 199, 179, 255;
+    --color-3: 128, 0, 255;
+    --color-4: 160, 160, 160;
+    --color-5: 79, 67, 142;
+    
+    --color-gris-1: 186, 186, 186;
+    --color-gris-2: 150, 150, 150;
+    /* 👇🏻 --color-gris-2 * 20%; */
+    --color-gris-3: 30,30,30;
+    --color-gris-4: gray;
+    --color-gris-4: rgb(128, 128, 128);
+    --color-gris-5: 160, 160, 160;
+    
+    --color-h2: rgb(var(--color-2), 0.9);
+    --gradiente-fondo-h2-1: rgb(var(--color-1));
+    --gradiente-fondo-h2-2: rgb(var(--color-2));
+    --gradiente-borde-1: rgba(var(--color-1), 0.7);
+    --gradiente-borde-2: rgba(var(--color-2));
+    --gradiente-nav-1:   rgba(var(--color-1), 0.4) 0%;
+    --gradiente-nav-2:   rgb(var(--color-3), 0.05) 40%;
+    --border-perfil:     rgba(var(--color-5)); /* ex-H2 ex-colorBotón */
+    /* --background-intercalado: var(--color-gris-2),0.2; */
+    --background-intercalado: var(--color-gris-3);
+    --fondo: rgba(var(--color-gris-3),0.9);
+    
+    
+    color-scheme: only light;
+}

@@ -7,6 +7,83 @@ main {
 
     justify-self: center;
     width: 100%;
+
+    section {
+        padding: 15px 5px;
+    
+        &>div{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px;
+    
+            &>div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 15rem;
+                min-width: min-content;
+                flex-grow: 1;
+                margin: 2.5% 5%;
+    
+                img, video {
+                    width: 10rem;
+                    height: 10rem;
+                    max-height: 45vw;
+                    max-width: 45vw;
+                    align-self: center;
+                    object-fit: cover;
+                    box-shadow: 0 0 20px -5px;
+                    margin-inline: 15px;
+                }
+            }
+
+            &>ul{
+                flex-grow: 1;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 40px;
+                margin-left: 5%;
+                justify-items: stretch;
+                
+                list-style-type: '⩺  ';
+
+                &>li>ul {   /* lista dentro de otra lista */
+                    --estilo-lista-dentro-lista: none;
+                    list-style-type: var(--estilo-lista-dentro-lista);
+                    padding-left: 0.5rem;
+                    
+                    &>li::first-letter {
+                        padding-left: 0.5rem;
+                    }
+                }
+                
+                /* ???: cómo evitar que sobresalga por los costados en pantalla
+                MUY angosta ??? ➡➡➡➡ media query a 1columna "1fr" */
+                
+                &#ulIdiomas{
+                    /* para la seccion Idiomas las celdas van a ser un poquito más angostas */
+                    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                    
+                    li{
+                        justify-self: center;
+                    }
+                }
+                
+                @media screen and (max-width: 414px) {
+                        grid-template-columns: 1fr;
+                        justify-items: center;
+                }
+            }
+        }
+
+        #proyectos, #idiomas {
+            background-color: rgba(var(--color-gris-2));
+            background-color: rgba(var(--background-intercalado));
+            box-shadow: 0px 0px 5px 5px rgba(var(--background-intercalado));
+        }
+
+        
+    }
 }
 
 h2 {
@@ -14,13 +91,17 @@ h2 {
     font-weight: 450;
     color: var(--gradiente-fondo-h2-1);
     display: inline-flex;
-}
-@supports (-webkit-background-clip: text){
-    h2{
+    @supports (-webkit-background-clip: text){
         -webkit-background-clip: text;
         background-image: linear-gradient(-45deg, var(--gradiente-fondo-h2-1), var(--gradiente-fondo-h2-2));
         color: transparent;
     }
+    
+    @media screen and (max-width: 414px) {
+            text-align: center;
+            display: block;
+    }
+
 }
 
 h3 {
@@ -32,15 +113,6 @@ h4 {
     padding-block: 2%;
 }
 
-#imagenPerfil {
-    display: block;
-    border-radius: 50%;
-    width: 9.5rem;
-    height: 9.5rem;
-    max-height: 42.5vw;
-    max-width: 42.5vw;
-    animation: rotar 5s infinite ease-in-out reverse;
-}
 .div_imagenPerfil{
     align-self: center;
     display: flex;
@@ -54,88 +126,74 @@ h4 {
     animation: rotar 5s infinite ease-in-out , radio 5s infinite linear;
     box-shadow: 1px 0 10px;
     z-index: -1;
-}
-@keyframes rotar {
-    100% {transform: rotate(719deg);
-    };
-}
-@keyframes radio {
-    0% {border-radius: 48%}
-    50% {border-radius: 50%}
-    100% {border-radius: 48%};
+
+    #imagenPerfil {
+        display: block;
+        border-radius: 50%;
+        width: 9.5rem;
+        height: 9.5rem;
+        max-height: 42.5vw;
+        max-width: 42.5vw;
+        animation: rotar 5s infinite ease-in-out reverse;
+    }
 }
 
-section {
-    padding: 15px 5px;
-}
+// section>div>div {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     width: 15rem;
+//     min-width: min-content;
+//     flex-grow: 1;
+//     margin: 2.5% 5%;
+// }
 
-section>div {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-}
-.wrap_reverse {
-    flex-wrap: wrap-reverse;
-}
-    
-section>div>div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 15rem;
-    min-width: min-content;
-    flex-grow: 1;
-    margin: 2.5% 5%;
-}
+// section>div>div img, 
+// section>div>div video {
+//     width: 10rem;
+//     height: 10rem;
+//     max-height: 45vw;
+//     max-width: 45vw;
+//     align-self: center;
+//     object-fit: cover;
+//     box-shadow: 0 0 20px -5px;
+//     margin-inline: 15px;
+// }
 
-section>div>div img, 
-section>div>div video {
-    width: 10rem;
-    height: 10rem;
-    max-height: 45vw;
-    max-width: 45vw;
-    align-self: center;
-    object-fit: cover;
-    box-shadow: 0 0 20px -5px;
-    margin-inline: 15px;
-}
-
-section>div#proyectos_personales_1>div img {
+section#proyectos>div#proyectos_personales_1>div img {
     object-position: 42%;
 }
 
-section#contacto>div>div>img {
-    display: block;
-}
+// section#contacto>div>div>img {
+//     display: block;
+// }
 
 
-section>div>ul{
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-left: 5%;
-    justify-items: stretch;
+// section>div>ul{
+//     flex-grow: 1;
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//     gap: 40px;
+//     margin-left: 5%;
+//     justify-items: stretch;
     
-    /* ???: cómo evitar que sobresalga por los costados en pantalla
-    MUY angosta ??? */
-}
+//     &>li>ul {   /* lista dentro de otra lista */
+//         --estilo-lista-dentro-lista: none;
+//         list-style-type: var(--estilo-lista-dentro-lista);
+//         padding-left: 0.5rem;
+    
+//         &#experiencia>div>ul>li,
+//         &#proyectosLaborales>div>ul{
+//             list-style-type: '⩺  ';
+//         }
+    
+//         &>li::first-letter {
+//             padding-left: 0.5rem;
+//         }
+//     }
+// }
 
-section#experiencia>div>ul>li,
-section#proyectosLaborales>div>ul {
-    list-style-type: '⩺  ';   /* otra opción */
-    /* list-style-image: url('../assets/img/10x10.png'); */
-}
-section#experiencia>div>ul>li>ul ,
-section>div>ul>li>ul {
-    --estilo-lista-dentro-lista: none;
-    list-style-type: var(--estilo-lista-dentro-lista);
-    padding-left: 0.5rem;
-}
-section>div>ul>li>ul>li::first-letter {
-    padding-left: 0.5rem;
-}
-
+/* TODO: agregar un mapa?? */
 section#experiencia>div>ul>li:nth-child(3)>ul {
     --estilo-lista-dentro-lista: "•"
 }
@@ -165,30 +223,25 @@ section#proyectosLaborales>div>ul>li:nth-child(5)>ul {
 }
 
 
-section#idiomas>div>ul{
-    /* para la seccion Idiomas las celdas van a ser un poquito más angostas */
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-}
+// section#idiomas>div>ul{
+//     /* para la seccion Idiomas las celdas van a ser un poquito más angostas */
+//     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+// }
 
-#proyectos, #idiomas {
-    background-color: rgba(var(--color-gris-2));
-    background-color: rgba(var(--background-intercalado));
-    box-shadow: 0px 0px 5px 5px rgba(var(--background-intercalado));
-}
 
-@media screen and (max-width: 414px) {
+// @media screen and (max-width: 414px) {
 
-    section>div>ul{
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
+//     // section>div>ul{
+//     //     grid-template-columns: 1fr;
+//     //     justify-items: center;
+//     // }
 
-    main>section>h2 {
-        text-align: center;
-        display: block;
-    }
+//     // main>section>h2 {
+//     //     text-align: center;
+//     //     display: block;
+//     // }
     
     
 
-}
+// }
 /* ------------------ MAIN ------------------ */

@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 0, 0,0.95);
+    box-sizing: border-box;
+    
+    display: grid;
+    min-height: 99.5vh;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+}
+
+
+.wrap_reverse {
+    flex-wrap: wrap-reverse;
+}
+
+
+@keyframes rotar {
+    100% {transform: rotate(719deg);
+    };
+}
+@keyframes radio {
+    0% {border-radius: 48%}
+    50% {border-radius: 50%}
+    100% {border-radius: 48%};
+}

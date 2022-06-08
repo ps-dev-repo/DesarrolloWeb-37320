@@ -38,3 +38,13 @@ $color-3: rgba(128, 0, 255);
     
     color-scheme: only light;
 }
+
+$list_bullets: (
+    ( experiencia, 3, "•"),
+    ( experiencia, 4, "•"),
+    ( experiencia, 5, "-"),
+    ( proyectosLaborales, 2, "•"),
+    ( proyectosLaborales, 3, "*"),
+    ( proyectosLaborales, 4, "-"),
+    ( proyectosLaborales, 5, "-"),
+);

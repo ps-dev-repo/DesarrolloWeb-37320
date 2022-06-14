@@ -222,9 +222,15 @@ section#proyectos>div#proyectos_personales_1>div img {
 //     --estilo-lista-dentro-lista: "-"
 // }
 
-@each $ID, $childN, $character in $list_bullets {
-    section##{$ID}>div>ul>li:nth-child(#{$childN})>ul {
-        --estilo-lista-dentro-lista: "#{$character}";
+// @each $ID, $childN, $character in $list_bullets {
+//     section##{$ID}>div>ul>li:nth-child(#{$childN})>ul {
+//         --estilo-lista-dentro-lista: "#{$character}";
+//     }
+// }
+
+@each $item in $list_bulletsMaps {
+    section##{map-get($item, section)}>div>ul>li:nth-child(#{map-get($item, nChild)})>ul {
+        --estilo-lista-dentro-lista: "#{map-get($map: $item, $key: bullet)}";
     }
 }
 

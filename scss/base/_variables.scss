@@ -40,11 +40,21 @@ $color-3: rgba(128, 0, 255);
 }
 
 $list_bullets: (
-    ( experiencia, 3, "•"),
-    ( experiencia, 4, "•"),
-    ( experiencia, 5, "-"),
-    ( proyectosLaborales, 2, "•"),
-    ( proyectosLaborales, 3, "*"),
-    ( proyectosLaborales, 4, "-"),
-    ( proyectosLaborales, 5, "-"),
+    ( "experiencia", 3, "•"),
+    ( "experiencia", 4, "•"),
+    ( "experiencia", 5, "-"),
+    ( "proyectosLaborales", 2, "•"),
+    ( "proyectosLaborales", 3, "*"),
+    ( "proyectosLaborales", 4, "-"),
+    ( "proyectosLaborales", 5, "-"),
 );
+    
+$list_bulletsMaps: (
+    (section: "experiencia", nChild: 3, bullet: "•"),
+    (section: "experiencia", nChild: 4, bullet: "•"),
+    (section: "experiencia", nChild: 5, bullet: "-"),
+    (section: "proyectosLaborales", nChild: 2, bullet: "•"),
+    (section: "proyectosLaborales", nChild: 3, bullet: "*"),
+    (section: "proyectosLaborales", nChild: 4, bullet: "-"),
+    (section: "proyectosLaborales", nChild: 5, bullet: "-"),
+)

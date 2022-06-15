@@ -216,8 +216,9 @@ main section > div {
 }
 main section > div > div {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 15rem;
   min-width: min-content;
   flex-grow: 1;
@@ -228,7 +229,6 @@ main section > div > div img, main section > div > div video {
   height: 10rem;
   max-height: 45vw;
   max-width: 45vw;
-  align-self: center;
   object-fit: cover;
   box-shadow: 0 0 20px -5px;
   margin-inline: 15px;
@@ -301,9 +301,9 @@ h4 {
 }
 
 .div_imagenPerfil {
-  align-self: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: linear-gradient(45deg, var(--gradiente-borde-1), var(--gradiente-borde-2));
   border-radius: 50%;
   width: 10rem;

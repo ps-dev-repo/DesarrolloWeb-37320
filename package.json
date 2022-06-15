@@ -1,0 +1,21 @@
+{
+  "name": "DesarrolloWeb-37320",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "sass": "^1.52.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified********\" && exit 0",
+    "build-css": "sass scss/main.scss css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\" & exit 0",
+    "w": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

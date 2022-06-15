@@ -1,7 +1,6 @@
 css/debugging.css
 package-lock.json
 node_modules/
-package.json
 prueba*.*
 .vscode/settings.json
 css/main.css.map

@@ -1,3 +1,11 @@
+@mixin flex_centrado($direction: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @if $direction==column {
+        flex-direction: column;
+    }
+}
 /* ################## MAIN ################## */
 main {
     color: var(--color-texto);
@@ -17,9 +25,11 @@ main {
             margin: 10px;
     
             &>div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                @include flex_centrado(column);
+                // display: flex;
+                // flex-direction: column;
+                // justify-content: center;
+                // align-items: center;
                 width: 15rem;
                 min-width: min-content;
                 flex-grow: 1;
@@ -30,7 +40,7 @@ main {
                     height: 10rem;
                     max-height: 45vw;
                     max-width: 45vw;
-                    align-self: center;
+                    // align-self: center;
                     object-fit: cover;
                     box-shadow: 0 0 20px -5px;
                     margin-inline: 15px;
@@ -114,9 +124,11 @@ h4 {
 }
 
 .div_imagenPerfil{
-    align-self: center;
-    display: flex;
-    justify-content: center;
+    @include flex_centrado;
+    // // align-self: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     background: linear-gradient(45deg, var(--gradiente-borde-1), var(--gradiente-borde-2));
     border-radius: 50%;
     width: 10rem;

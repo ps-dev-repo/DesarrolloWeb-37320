@@ -138,6 +138,12 @@
         (section: "proyectosLaborales", nChild: 4, bullet: "-"),
         (section: "proyectosLaborales", nChild: 5, bullet: "-"),
     )
+    ...
+    @each $item in $list_bulletsMaps {
+        section##{map-get($item, section)}>div>ul>li:nth-child(#{map-get($item, nChild)})>ul {
+            --estilo-lista-dentro-lista: "#{map-get($map: $item, $key: bullet)}";
+        }
+    }
     ```
 
 - EXTEND:

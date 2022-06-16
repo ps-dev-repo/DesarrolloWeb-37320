@@ -74,7 +74,7 @@
             <nav>
     ```
     - con su respectivo `text-decoration`:
-    ```sass
+    ```scss
         a {
             text-decoration: none;
         }

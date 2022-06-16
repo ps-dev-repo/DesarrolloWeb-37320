@@ -7,6 +7,10 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     
+    a {
+        text-decoration: none;
+    }
+    
     h2 {
         color: black;
         color: var(--gradiente-fondo-h2-1);

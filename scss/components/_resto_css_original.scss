@@ -172,8 +172,10 @@ h4 {
 //     margin-inline: 15px;
 // }
 
-section#proyectos>div#proyectos_personales_1>div img {
-    object-position: 42%;
+section#proyectos>div#proyectos_personales_1>div {
+    img, video {
+        object-position: 42%;
+    }
 }
 
 // section#contacto>div>div>img {

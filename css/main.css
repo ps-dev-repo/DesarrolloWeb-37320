@@ -73,6 +73,9 @@ header {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+header a {
+  text-decoration: none;
+}
 header h2 {
   color: black;
   color: var(--gradiente-fondo-h2-1);
@@ -324,7 +327,7 @@ h4 {
   animation: rotar 5s infinite ease-in-out reverse;
 }
 
-section#proyectos > div#proyectos_personales_1 > div img {
+section#proyectos > div#proyectos_personales_1 > div img, section#proyectos > div#proyectos_personales_1 > div video {
   object-position: 42%;
 }
 

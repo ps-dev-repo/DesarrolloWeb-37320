@@ -111,3 +111,61 @@
                 margin-inline: 15px;
             }
         ```
+
+
+## SASS II
+
+- MIXIN:
+    ```scss
+    @mixin flex_centrado($direction: row) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @if $direction==column {
+            flex-direction: column;
+        }
+    }
+    ```
+
+- MAPA:
+    ```scss
+    $list_bulletsMaps: (
+        (section: "experiencia", nChild: 3, bullet: "•"),
+        (section: "experiencia", nChild: 4, bullet: "•"),
+        (section: "experiencia", nChild: 5, bullet: "-"),
+        (section: "proyectosLaborales", nChild: 2, bullet: "•"),
+        (section: "proyectosLaborales", nChild: 3, bullet: "*"),
+        (section: "proyectosLaborales", nChild: 4, bullet: "-"),
+        (section: "proyectosLaborales", nChild: 5, bullet: "-"),
+    )
+    ```
+
+- EXTEND:
+    ```scss
+        ...
+            ...
+            &>input[type=reset] {
+                background-color: $gradiente-borde-1;
+                color: white;
+                font-weight: bold;
+                padding: 5px;
+                flex-grow: 1;
+                box-shadow: 0px 0px 7px $color-texto;
+                
+                &:hover{
+                background-color: $color-3;
+                background-image: url("https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/61f116f06248585a2739061f_Button%20BG.png");
+                }
+            }
+        
+            &>input[type=submit] {
+                @extend [type=reset];
+                
+                &:hover{
+                    background-color: $gradiente-fondo-h2-1;
+                    background-image: url("https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/61f116f06248585a2739061f_Button%20BG.png");
+                    background-size: cover;
+                }
+            }
+        ...
+    ```

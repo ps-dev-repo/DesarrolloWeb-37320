@@ -65,7 +65,7 @@
 
 - Se quitó el `title` antiguo y el `<script src="./css/style.css` antiguo anterior a la implementación de **Sass**
 
-- Se reemplazo el "logo" estático del NavBar por un anchor anidado que dirigiera hacia la página principal/Home:
+- Se reemplazo el "logo" estático del NavBar por un anchor anidado que diriga al usuario hacia la página principal/Home:
     ```HTML
         <header id="headerId">
     +		<a href="./index.html">

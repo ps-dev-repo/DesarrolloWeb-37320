@@ -1,11 +1,11 @@
-@mixin flex_centrado($direction: row) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @if $direction==column {
-        flex-direction: column;
-    }
-}
+// @mixin flex_centrado($direction: row) {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     @if $direction==column {
+//         flex-direction: column;
+//     }
+// }
 /* ################## MAIN ################## */
 main {
     color: var(--color-texto);
@@ -25,11 +25,9 @@ main {
             margin: 10px;
     
             &>div {
-                @include flex_centrado(column);
-                // display: flex;
-                // flex-direction: column;
-                // justify-content: center;
-                // align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 width: 15rem;
                 min-width: min-content;
                 flex-grow: 1;
@@ -40,7 +38,7 @@ main {
                     height: 10rem;
                     max-height: 45vw;
                     max-width: 45vw;
-                    // align-self: center;
+                    align-self: center;
                     object-fit: cover;
                     box-shadow: 0 0 20px -5px;
                     margin-inline: 15px;
@@ -96,39 +94,12 @@ main {
     }
 }
 
-h2 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 450;
-    color: var(--gradiente-fondo-h2-1);
-    display: inline-flex;
-    @supports (-webkit-background-clip: text){
-        -webkit-background-clip: text;
-        background-image: linear-gradient(-45deg, var(--gradiente-fondo-h2-1), var(--gradiente-fondo-h2-2));
-        color: transparent;
-    }
-    
-    @media screen and (max-width: 414px) {
-            text-align: center;
-            display: block;
-    }
-
-}
-
-h3 {
-    padding-block: 2%;
-}
-
-h4 {
-    text-transform: uppercase;
-    padding-block: 2%;
-}
 
 .div_imagenPerfil{
-    @include flex_centrado;
-    // // align-self: center;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(45deg, var(--gradiente-borde-1), var(--gradiente-borde-2));
     border-radius: 50%;
     width: 10rem;
@@ -150,91 +121,11 @@ h4 {
     }
 }
 
-// section>div>div {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     width: 15rem;
-//     min-width: min-content;
-//     flex-grow: 1;
-//     margin: 2.5% 5%;
-// }
-
-// section>div>div img, 
-// section>div>div video {
-//     width: 10rem;
-//     height: 10rem;
-//     max-height: 45vw;
-//     max-width: 45vw;
-//     align-self: center;
-//     object-fit: cover;
-//     box-shadow: 0 0 20px -5px;
-//     margin-inline: 15px;
-// }
-
 section#proyectos>div#proyectos_personales_1>div {
     img, video {
         object-position: 42%;
     }
 }
-
-// section#contacto>div>div>img {
-//     display: block;
-// }
-
-
-// section>div>ul{
-//     flex-grow: 1;
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-//     gap: 40px;
-//     margin-left: 5%;
-//     justify-items: stretch;
-    
-//     &>li>ul {   /* lista dentro de otra lista */
-//         --estilo-lista-dentro-lista: none;
-//         list-style-type: var(--estilo-lista-dentro-lista);
-//         padding-left: 0.5rem;
-    
-//         &#experiencia>div>ul>li,
-//         &#proyectosLaborales>div>ul{
-//             list-style-type: '⩺  ';
-//         }
-    
-//         &>li::first-letter {
-//             padding-left: 0.5rem;
-//         }
-//     }
-// }
-
-// /* TODO: agregar un mapa?? */
-// section#experiencia>div>ul>li:nth-child(3)>ul {
-//     --estilo-lista-dentro-lista: "•"
-// }
-
-// section#experiencia>div>ul>li:nth-child(4)>ul {
-//     --estilo-lista-dentro-lista: "•"
-// }
-
-// section#experiencia>div>ul>li:nth-child(5)>ul {
-//     --estilo-lista-dentro-lista: "-"
-// }
-
-// section#proyectosLaborales>div>ul>li:nth-child(2)>ul {
-//     --estilo-lista-dentro-lista: "•"
-// }
-
-// section#proyectosLaborales>div>ul>li:nth-child(3)>ul {
-//     --estilo-lista-dentro-lista: "*"
-// }
-
-// section#proyectosLaborales>div>ul>li:nth-child(4)>ul {
-//     --estilo-lista-dentro-lista: "-"
-// }
-
-// section#proyectosLaborales>div>ul>li:nth-child(5)>ul {
-//     --estilo-lista-dentro-lista: "-"
-// }
 
 // @each $ID, $childN, $character in $list_bullets {
 //     section##{$ID}>div>ul>li:nth-child(#{$childN})>ul {
@@ -248,26 +139,4 @@ section#proyectos>div#proyectos_personales_1>div {
     }
 }
 
-
-// section#idiomas>div>ul{
-//     /* para la seccion Idiomas las celdas van a ser un poquito más angostas */
-//     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-// }
-
-
-// @media screen and (max-width: 414px) {
-
-//     // section>div>ul{
-//     //     grid-template-columns: 1fr;
-//     //     justify-items: center;
-//     // }
-
-//     // main>section>h2 {
-//     //     text-align: center;
-//     //     display: block;
-//     // }
-    
-    
-
-// }
 /* ------------------ MAIN ------------------ */

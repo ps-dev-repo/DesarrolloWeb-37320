@@ -1,38 +1,14 @@
 @charset "UTF-8";
-/* TODO: convertir en variables sass */
-:root {
-  --color-texto: rgb(147, 125, 209);
-  /* color: rgb(179, 152, 253);  /* color para probar texto */
-  --color-1: 155, 55, 255;
-  --color-2: 199, 179, 255;
-  --color-3: 128, 0, 255;
-  --color-4: 160, 160, 160;
-  --color-5: 79, 67, 142;
-  --color-gris-1: 186, 186, 186;
-  --color-gris-2: 150, 150, 150;
-  /* 👇🏻 --color-gris-2 * 20%; */
-  --color-gris-3: 30,30,30;
-  --color-gris-4: gray;
-  --color-gris-4: rgb(128, 128, 128);
-  --color-gris-5: 160, 160, 160;
-  --color-h2: rgb(var(--color-2), 0.9);
-  --gradiente-fondo-h2-1: rgb(var(--color-1));
-  --gradiente-fondo-h2-2: rgb(var(--color-2));
-  --gradiente-borde-1: rgba(var(--color-1), 0.7);
-  --gradiente-borde-2: rgba(var(--color-2));
-  --gradiente-nav-1: rgba(var(--color-1), 0.4) 0%;
-  --gradiente-nav-2: rgb(var(--color-3), 0.05) 40%;
-  --border-perfil: rgba(var(--color-5)); /* ex-H2 ex-colorBotón */
-  /* --background-intercalado: var(--color-gris-2),0.2; */
-  --background-intercalado: var(--color-gris-3);
-  --fondo: rgba(var(--color-gris-3),0.9);
-  color-scheme: only light;
-}
-
+/* ex-H2 ex-colorBotón */
+/* --background-intercalado: rgb(($color-gris-2),0.2); */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  color-scheme: only light;
 }
 
 body {
@@ -44,21 +20,21 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-h2 {
+h2, main section > div > div .div_img_hover[title]::before, main section > div > div > div:not(.div_imagenPerfil)[title]::before {
   font-family: "Roboto", sans-serif;
   font-weight: 450;
-  color: var(--gradiente-fondo-h2-1);
+  color: rgb(155, 55, 255);
   display: inline-flex;
 }
 @supports (-webkit-background-clip: text) {
-  h2 {
+  h2, main section > div > div .div_img_hover[title]::before, main section > div > div > div:not(.div_imagenPerfil)[title]::before {
     -webkit-background-clip: text;
-    background-image: linear-gradient(-45deg, var(--gradiente-fondo-h2-1), var(--gradiente-fondo-h2-2));
+    background-image: linear-gradient(-45deg, rgb(155, 55, 255), rgb(199, 179, 255));
     color: transparent;
   }
 }
 @media screen and (max-width: 414px) {
-  h2 {
+  h2, main section > div > div .div_img_hover[title]::before, main section > div > div > div:not(.div_imagenPerfil)[title]::before {
     text-align: center;
     display: block;
   }
@@ -95,28 +71,29 @@ h4 {
 }
 /* ################# NAVBAR ################# */
 header {
-  background-color: rgb(var(--color-gris-1));
+  background-color: #6c6c6c;
   position: sticky;
   top: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  z-index: 1;
 }
 header a {
   text-decoration: none;
 }
-header h2 {
-  color: black;
-  color: var(--gradiente-fondo-h2-1);
+header h2, header main section > div > div .div_img_hover[title]::before, main section > div > div header .div_img_hover[title]::before, header main section > div > div > div:not(.div_imagenPerfil)[title]::before, main header section > div > div > div:not(.div_imagenPerfil)[title]::before {
+  color: rgb(199, 179, 255);
   font-size: xx-large;
   background-image: unset;
   align-self: center;
 }
 @supports (-webkit-background-clip: text) {
-  header h2 {
+  header h2, header main section > div > div .div_img_hover[title]::before, main section > div > div header .div_img_hover[title]::before, header main section > div > div > div:not(.div_imagenPerfil)[title]::before, main header section > div > div > div:not(.div_imagenPerfil)[title]::before {
     -webkit-background-clip: text;
     background-image: url("https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/61f116f06248585a2739061f_Button%20BG.png");
-    color: rgba(0, 0, 0, 0.25);
+    color: transparent;
+    text-shadow: 0px 0px 0px rgba(232, 124, 245, 0.5607843137);
   }
 }
 header > nav {
@@ -137,7 +114,7 @@ header > nav > ul {
 }
 header > nav > ul > li {
   display: flex;
-  background-color: rgb(var(--color-gris-1));
+  background-color: #6c6c6c;
   text-align: center;
 }
 header > nav > ul > li a {
@@ -147,19 +124,20 @@ header > nav > ul > li a {
   font-size: 1.1rem;
   font-weight: bold;
   padding: 0.5em;
-  color: var(--color-texto);
+  color: rgb(179, 152, 253);
   width: 100%;
 }
 header > nav > ul > li a:hover, header > nav > ul > li a:focus {
   text-decoration: underline;
-  background-color: rgba(255, 255, 255, 0.3);
-  background-image: linear-gradient(to top, var(--gradiente-nav-1), var(--gradiente-nav-2));
+  line-height: 1.1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to top, rgba(155, 55, 255, 0.4) 0%, rgba(128, 0, 255, 0.05) 40%);
   box-shadow: 0px 1px 12px 0px;
 }
 
 /* media-query mobile small */
 @media screen and (max-width: 414px) {
-  header h2 {
+  header h2, header main section > div > div .div_img_hover[title]::before, main section > div > div header .div_img_hover[title]::before, header main section > div > div > div:not(.div_imagenPerfil)[title]::before, main header section > div > div > div:not(.div_imagenPerfil)[title]::before {
     font-size: x-large;
   }
   header > nav {
@@ -169,7 +147,7 @@ header > nav > ul > li a:hover, header > nav > ul > li a:focus {
     bottom: 0;
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 0;
   }
   header > nav > ul {
     display: block;
@@ -193,7 +171,7 @@ header > nav > ul > li a:hover, header > nav > ul > li a:focus {
     margin: 2px;
     padding: 2px;
     height: 95%;
-    border: 1.75px solid var(--color-gris-4);
+    border: 1.75px solid gray;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -212,15 +190,14 @@ header > nav > ul > li a:hover, header > nav > ul > li a:focus {
     width: 20px;
     height: 4px;
     border-radius: 15px;
-    background-color: var(--color-gris-4);
-    border: 1.5px solid rgba(var(--color-gris-2));
+    background-color: gray;
+    border: 1.5px solid rgb(150, 150, 150);
     transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
     transform: rotate(0deg);
   }
   /* barras del menú desplegable cuando está abierto */
   header > nav > input:checked + label[for=hamburger_chk] > hr {
-    border: 1px solid var(--color-gris-4);
-    background-color: var(--color-gris-4);
+    border: 1px solid gray;
     transform: translateY(7px) rotate(45deg);
     /* barra del medio */
     /* barra de abajo */
@@ -239,7 +216,7 @@ header > nav > ul > li a:hover, header > nav > ul > li a:focus {
 /* ----------------- NAVBAR ----------------- */
 /* ################## MAIN ################## */
 main {
-  color: var(--color-texto);
+  color: rgb(147, 125, 209);
   /* para que quede más lindo, y mejor espaciadas la web */
   max-width: 1000px;
   justify-self: center;
@@ -262,15 +239,44 @@ main section > div > div {
   flex-grow: 1;
   margin: 2.5% 5%;
 }
-main section > div > div img, main section > div > div video {
+main section > div > div .div_img_hover, main section > div > div > div:not(.div_imagenPerfil) {
   width: 10rem;
   height: 10rem;
   max-height: 45vw;
   max-width: 45vw;
   align-self: center;
-  object-fit: cover;
-  box-shadow: 0 0 20px -5px;
   margin-inline: 15px;
+  box-shadow: 0 0 20px -5px;
+  /* efecto hover */
+  position: relative;
+  overflow: hidden;
+  /* FIN efecto hover */
+}
+main section > div > div .div_img_hover img, main section > div > div .div_img_hover video, main section > div > div > div:not(.div_imagenPerfil) img, main section > div > div > div:not(.div_imagenPerfil) video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main section > div > div .div_img_hover[title]::before, main section > div > div > div:not(.div_imagenPerfil)[title]::before {
+  position: absolute;
+  content: attr(title);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: #c2b6e5;
+  background: rgba(0, 0, 0, 0.65);
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+}
+@media screen and (max-width: 414px) {
+  main section > div > div .div_img_hover[title]::before, main section > div > div > div:not(.div_imagenPerfil)[title]::before {
+    font-size: smaller;
+  }
+}
+main section > div > div .div_img_hover[title]:hover::before, main section > div > div > div:not(.div_imagenPerfil)[title]:hover::before {
+  transform: none;
 }
 main section > div > ul {
   flex-grow: 1;
@@ -305,9 +311,8 @@ main section > div > ul#ulIdiomas li {
   }
 }
 main section#proyectos, main section#idiomas {
-  background-color: rgba(var(--color-gris-2));
-  background-color: rgba(var(--background-intercalado));
-  box-shadow: 0px 0px 5px 5px rgba(var(--background-intercalado));
+  background-color: #1e1e1e;
+  box-shadow: 0px 0px 5px 5px #1e1e1e;
 }
 
 .div_imagenPerfil {
@@ -315,7 +320,7 @@ main section#proyectos, main section#idiomas {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, var(--gradiente-borde-1), var(--gradiente-borde-2));
+  background: linear-gradient(45deg, rgba(112, 40, 184, 0.985), rgb(199, 179, 255));
   border-radius: 50%;
   width: 10rem;
   height: 10rem;
@@ -385,7 +390,7 @@ section > div > div > form#formulario_contacto > div {
   margin-top: 10px;
 }
 section > div > div > form#formulario_contacto > div > input[type=reset], section > div > div > form#formulario_contacto > div > input[type=submit] {
-  background-color: rgba(var(--color-1), 0.7);
+  background-color: rgba(112, 40, 184, 0.985);
   color: white;
   font-weight: bold;
   padding: 5px;
@@ -397,7 +402,7 @@ section > div > div > form#formulario_contacto > div > input[type=reset]:hover, 
   background-image: url("https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/61f116f06248585a2739061f_Button%20BG.png");
 }
 section > div > div > form#formulario_contacto > div > input[type=submit]:hover {
-  background-color: rgb(var(--color-1));
+  background-color: rgb(155, 55, 255);
   background-image: url("https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/61f116f06248585a2739061f_Button%20BG.png");
   background-size: cover;
 }
@@ -406,7 +411,7 @@ section > div > div > form#formulario_contacto > div > input[type=submit]:hover 
 footer {
   /* no uso height por ahora */
   min-height: 40px;
-  background-color: var(--color-gris-4);
+  background-color: gray;
   position: sticky;
   bottom: 0px;
   left: 0;
@@ -440,10 +445,10 @@ footer > div > a > i {
 footer > div > a > i > svg {
   height: 25px;
   width: 25px;
-  color: rgb(var(--color-gris-1));
+  color: rgb(186, 186, 186);
 }
 footer > div > a:hover > i > svg {
-  color: var(--gradiente-fondo-h2-1);
+  color: rgb(155, 55, 255);
 }
 
 /* ----------------- FOOTER ----------------- */

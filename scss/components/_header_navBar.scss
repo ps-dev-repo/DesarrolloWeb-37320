@@ -6,6 +6,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    z-index: 1;
     
     a {
         text-decoration: none;

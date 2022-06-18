@@ -1,6 +1,6 @@
 /* ################# NAVBAR ################# */
 header {
-    background-color: rgb(var(--color-gris-1));
+    background-color: $background-header;
     position: sticky;
     top: 0;
     display: flex;
@@ -13,8 +13,11 @@ header {
     }
     
     h2 {
-        color: black;
-        color: var(--gradiente-fondo-h2-1);
+        @if $background-header==$color-gris-1 {
+            color: $gradiente-fondo-h2-1;
+        } @else{
+            color: $gradiente-fondo-h2-2;
+        }
         font-size: xx-large;
         background-image: unset;
         align-self: center;
@@ -22,7 +25,12 @@ header {
         @supports (-webkit-background-clip: text){
             -webkit-background-clip: text;
             background-image: url("https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/61f116f06248585a2739061f_Button%20BG.png");
-            color: rgb(0, 0, 0, 0.25);
+            @if $background-header==$color-gris-1 {
+                color: rgb(0, 0, 0, 0.25);
+            } @else{
+                color: transparent;
+                text-shadow: 0px 0px 0px #e87cf58f;
+            }
         }
     }
     
@@ -45,7 +53,7 @@ header {
 
             &>li {
                 display: flex;
-                background-color: rgb(var(--color-gris-1));
+                background-color: $background-header;
                 text-align: center;
 
                 a {
@@ -55,14 +63,24 @@ header {
                     font-size: 1.1rem;
                     font-weight: bold;
                     padding: 0.5em;
-                    color: var(--color-texto);
+                    @if $background-header==$color-gris-1 {
+                        color: $color-texto;
+                    } @else{
+                        color: $color-texto_claro;
+                    }
+        
                     width: 100%;
 
                     &:hover,
                     &:focus {
                         text-decoration: underline;
-                        background-color: rgba(255, 255, 255, 0.3);
-                        background-image: linear-gradient(to top, var(--gradiente-nav-1),var(--gradiente-nav-2));
+                        line-height: 1.1rem;
+                        @if $background-header==$color-gris-1 {
+                            background-color: rgba(255, 255, 255, 0.13);
+                        } @else{
+                            background-color: rgba(0, 0, 0, 0.10);
+                        }
+                        background-image: linear-gradient(to top, $gradiente-nav-1,$gradiente-nav-2);
                         box-shadow: 0px 1px 12px 0px;
                     }
                 }
@@ -114,7 +132,7 @@ header {
         margin: 2px;
         padding: 2px;
         height: 95%;
-        border: 1.75px solid var(--color-gris-4);
+        border: 1.75px solid $color-gris-4;
         border-radius: 5px;
         cursor: pointer;
         
@@ -134,16 +152,15 @@ header {
         width: 20px;
         height: 4px;
         border-radius: 15px;
-        background-color: var(--color-gris-4);
-        border: 1.5px solid rgba(var(--color-gris-2));
+        background-color: $color-gris-4;
+        border: 1.5px solid $color-gris-2;
         transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;;
         transform: rotate(0deg);
     }
     
     /* barras del menú desplegable cuando está abierto */
     header>nav>input:checked + label[for="hamburger_chk"]>hr{
-        border: 1px solid var(--color-gris-4);
-        background-color: var(--color-gris-4);
+        border: 1px solid $color-gris-4;
         transform: translateY(+7px) rotate(+45deg);
         
         /* barra del medio */

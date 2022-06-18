@@ -8,7 +8,7 @@
 // }
 /* ################## MAIN ################## */
 main {
-    color: var(--color-texto);
+    color: $color-texto;
     
     /* para que quede más lindo, y mejor espaciadas la web */
     max-width: 1000px;
@@ -119,9 +119,8 @@ main {
         }
 
         &#proyectos, &#idiomas {
-            background-color: rgba(var(--color-gris-2));
-            background-color: rgba(var(--background-intercalado));
-            box-shadow: 0px 0px 5px 5px rgba(var(--background-intercalado));
+            background-color: $background-intercalado;
+            box-shadow: 0px 0px 5px 5px $background-intercalado;
         }
 
         
@@ -134,7 +133,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, var(--gradiente-borde-1), var(--gradiente-borde-2));
+    background: linear-gradient(45deg, $gradiente-borde-1, $gradiente-borde-2);
     border-radius: 50%;
     width: 10rem;
     height: 10rem;

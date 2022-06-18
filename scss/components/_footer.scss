@@ -2,7 +2,7 @@
 footer {
     /* no uso height por ahora */
     min-height: 40px;
-    background-color: var(--color-gris-4);
+    background-color: $background-footer;
     position: sticky;
     bottom: 0px;
     left: 0;
@@ -37,12 +37,12 @@ footer {
                 &>svg {
                     height: 25px;
                     width: 25px;
-                    color: rgb(var(--color-gris-1));
+                    color: $color-gris-1;
                 }
             }
             
             &:hover>i>svg {
-                color: var(--gradiente-fondo-h2-1);
+                color: $gradiente-fondo-h2-1;
             }
         }
     }

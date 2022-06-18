@@ -54,14 +54,10 @@ main {
                         display: flex;
                         align-items: center;
                         color: lighten($color: $color-texto, $amount: 15%) ;
+                        font-size: clamp(0.75rem, 5.5vw, 1rem);
                         background: rgba($color: black, $alpha: 0.65);
                         transform: translateY(100%);
                         transition: transform 0.25s ease;
-
-                        @media screen and (max-width: 414px) {
-                            font-size: smaller;
-                        }
-
                     }
                     &[title]:hover::before{
                         transform: none;

@@ -30,8 +30,8 @@ $gradiente-nav-1:   rgba(($color-1), 0.4) 0%;
 $gradiente-nav-2:   rgb(($color-3), 0.05) 40%;
 
 // variables por componente:
-$border-perfil:     $color-5; /* ex-H2 ex-colorBotón */
-/* --background-intercalado: rgb(($color-gris-2),0.2); */
+$border-perfil:     $color-5; // /* ex-H2 ex-colorBotón */
+// otra alternativa de color: /* --background-intercalado: rgb(($color-gris-2),0.2); */
 $background-intercalado: $color-gris-3;
 $background-header: $color-gris-1;
 $background-header: mix($color-gris-1 , $background-intercalado);

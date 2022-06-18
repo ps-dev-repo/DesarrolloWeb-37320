@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/* ex-H2 ex-colorBotón */
-/* --background-intercalado: rgb(($color-gris-2),0.2); */
 * {
   margin: 0;
   padding: 0;
@@ -286,8 +284,6 @@ main section > div > ul {
   margin-left: 5%;
   justify-items: stretch;
   list-style-type: "⩺  ";
-  /* ???: cómo evitar que sobresalga por los costados en pantalla
-  MUY angosta ??? ➡➡➡➡ media query a 1columna "1fr" */
 }
 main section > div > ul > li > ul { /* lista dentro de otra lista */
   --estilo-lista-dentro-lista: none;

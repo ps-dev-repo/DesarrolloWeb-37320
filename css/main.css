@@ -264,14 +264,10 @@ main section > div > div .div_img_hover[title]::before, main section > div > div
   display: flex;
   align-items: center;
   color: #c2b6e5;
+  font-size: clamp(0.75rem, 5.5vw, 1rem);
   background: rgba(0, 0, 0, 0.65);
   transform: translateY(100%);
   transition: transform 0.25s ease;
-}
-@media screen and (max-width: 414px) {
-  main section > div > div .div_img_hover[title]::before, main section > div > div > div:not(.div_imagenPerfil)[title]::before {
-    font-size: smaller;
-  }
 }
 main section > div > div .div_img_hover[title]:hover::before, main section > div > div > div:not(.div_imagenPerfil)[title]:hover::before {
   transform: none;

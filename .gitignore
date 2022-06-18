@@ -2,5 +2,5 @@ css/debugging.css
 package-lock.json
 node_modules/
 prueba*.*
-.vscode/settings.json
-css/main.css.map
+.vscode/
+css/style.css

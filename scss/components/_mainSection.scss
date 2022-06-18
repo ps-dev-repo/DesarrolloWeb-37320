@@ -33,15 +33,49 @@ main {
                 flex-grow: 1;
                 margin: 2.5% 5%;
     
-                img, video {
+                .div_img_hover, &>div:not(.div_imagenPerfil){
                     width: 10rem;
                     height: 10rem;
                     max-height: 45vw;
                     max-width: 45vw;
                     align-self: center;
-                    object-fit: cover;
-                    box-shadow: 0 0 20px -5px;
                     margin-inline: 15px;
+                    box-shadow: 0 0 20px -5px;
+
+                    
+                    img, video {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    
+                    /* efecto hover */
+                    position: relative;
+                    overflow: hidden;
+                    &[title]::before{
+                        @extend h2;
+                        position: absolute;
+                        content: attr(title);
+                        width: 100%;
+                        height: 100%;
+                        // max-width: 45vw;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        color: lighten($color: $color-texto, $amount: 15%) ;
+                        background: rgba($color: black, $alpha: 0.65);
+                        transform: translateY(100%);
+                        transition: transform 0.25s ease;
+
+                        @media screen and (max-width: 414px) {
+                            font-size: smaller;
+                        }
+
+                    }
+                    &[title]:hover::before{
+                        transform: none;
+                    }
+                    /* FIN efecto hover */
                 }
             }
 

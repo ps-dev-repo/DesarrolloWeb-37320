@@ -1,5 +1,197 @@
 # Registro de cambios - Changelog
 
+# ➡ [TERCERA ENTREGA DEL PROYECTO FINAL]
+
+
+- Se movieron las reglas sass correspondientes al `<Main>`, a su propio `component`
+    ```diff
+        [...]
+        @import "./components/header_navBar";
+    -   @import "./components/resto_css_original";
+    +   @import "./components/mainSection";
+        [...]
+    ```
+
+- Se eliminó TODO el código Sass y HTML que no se estaba usando (comentarios no específicos, etc)
+
+- Se anidó algunas propiedades más:
+    ```diff
+    -   header>nav>ul {
+    -       [...]
+    -   }
+
+    +       &>ul{
+    +           [...]
+    +       }
+    +   }
+    ```
+
+- Se cambió el color de:
+    - Fondo NavBar
+    - Tipografía NavBar
+    - Efecto Hover en enlaces NavBar
+    - Efecto background en enlaces NavBar
+    - Efecto lava del Logo "Paolo Sartori")
+
+- Se agregó un efecto Hover sobre las imágenes de la sección `#proyectos`. Cuyo valor es tomado de un atributo `"title"` del contenedor. Y se hicieron las adecuaciones necesarias en el DOM y en las reglas Sass/CSS que eran necesarias. (incluyendo `clamp` para adecuar tamaño de letra al tamaño de su padre y del viewport)
+    ```html
+        <div class="div_img_hover" title="Reconocimiento de Lenguaje de señas">
+    ```
+    ```scss
+        /* efecto hover */
+        position: relative;
+        overflow: hidden;
+        &[title]::before{
+            @extend h2;
+            position: absolute;
+            content: attr(title);
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            color: lighten($color: $color-texto, $amount: 15%) ;
+            font-size: clamp(0.75rem, 5.5vw, 1rem);
+            background: rgba($color: black, $alpha: 0.65);
+            transform: translateY(100%);
+            transition: transform 0.25s ease;
+
+            @media screen and (max-width: 414px) {
+                font-size: smaller;
+            }
+
+        }
+        &[title]:hover::before{
+            transform: none;
+        }
+        /* FIN efecto hover */
+    ```
+
+- Se pasaron *todas* las variables de tipo CSS a su equivalente en SASS
+    ```diff
+    -   :root {
+    -       --color-texto: rgb(147, 125, 209);
+        [...]
+    +   $color-texto: rgb(147, 125, 209);
+    ```
+    ```diff
+    -   background-image: linear-gradient(-45deg, var(--gradiente-fondo-h2-1), var(--gradiente-fondo-h2-2));
+        [...]
+    +   background-image: linear-gradient(-45deg, $gradiente-fondo-h2-1, $gradiente-fondo-h2-2);
+    ```
+
+-   Se hizo una limpieza de código, eliminando código y etiquetas no usadas
+    ```diff
+        <li>Análisis y comprobación mediante pruebas y simulación de los circuitos analógicos condicionadores de señales.</li>
+    -   <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, sit?</p> -->
+    -   <!-- <li>Análisis, diseño, armado y prueba de la placa prototipo para el procesamiento mediante microcontrolador.</li> -->
+    ```
+
+- Se deshizo la utilización de ciertas recursos de Sass que ya no eran necesarios
+    ```diff
+    -   @mixin flex_centrado($direction: row) {
+    -       display: flex;
+    -       justify-content: center;
+    -       align-items: center;
+    -       @if $direction==column {
+    -           flex-direction: column;
+    -       }
+    -   }
+    ```
+    ```diff
+    -   @include flex_centrado(column);
+
+    +   display: flex;
+    +   flex-direction: column;
+    +   justify-content: center;
+    ```
+
+- Correción en las capas del NAV para permitir usar el "Logo" como anchor al Home
+
+- Mejoras estéticas en la sección `#idiomas`
+    ```diff
+        <p>Español</p>
+    +   <h3>🟊🟊🟊🟊🟊</h3>
+    *   <p><em>Nativo.</em></p>
+    ```
+
+- Se convirtió los items `<li>` de la sección `#experiencia` a "Card" que voltean al pasar el mouse por encima. Para ello se adaptó tanto el CSS/Sass con el uso de pseudo clases `:after` y `:before` para evitar una re-estructuración radical del HTML.
+    - Los títulos se toman mediante `attr()` de un atributo `[title-card]` de los contenedores respectivos
+    ```scss
+    &#experiencia {
+        div>ul>li[title-card]{
+
+            &>*{
+                transform: rotateY(180deg);
+                transform-style: preserve-3d;
+                perspective: 100px;
+                transition: transform 0.5s ease;
+                backface-visibility: hidden;
+            }
+            &:hover>*{
+                transform: rotateY(0);
+            }
+
+            /* efecto de Card Hover */
+            position: relative;
+            /* se usa ::after para el Card-Front*/
+            /* y se usa ::before para darle un background de 100% x 100% */
+            &::before, &::after{
+                content: attr(title-card);
+                font-size: x-large;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                backface-visibility: hidden;
+                transition: transform 0.5s ease;
+                background-color: darken($background-intercalado, $amount: 3%);
+                /* efecto para la ¿esquina? */
+                border: 2px solid $background-intercalado;
+                border-bottom-right-radius: 40px;
+            }
+            // sólo para que el background de fondo quede al 100%
+            &::before{
+                content: "";
+                backface-visibility: initial;
+                border-bottom-right-radius: initial;
+                background-color: $background-intercalado;
+            }
+            &:hover::before, &:hover::after{
+                transform: rotateY(180deg);
+            }
+            /* FIN efecto de Card Hover */
+        }
+    }
+    ```
+
+- Se adaptó la página al hosting `000webhost.com`
+    ```html
+    <meta name="twitter:domain" content="https://psartori.000webhostapp.com/index.html">
+    <link rel="canonical" href="https://psartori.000webhostapp.com/index.html">
+    ```
+    ```html
+    <script>
+        window.addEventListener("load", function (event) {
+            document.getElementsByClassName("disclaimer")[0].remove();
+            console.log("Eliminado!");
+        });
+    </script>
+    ```
+
+
+---
+***
+## Entregas anteriores 👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻
+***
+---
+
+# [Entrega: **SASS II + SEO**]
 ## SEO
 
 - Cambio de Titulo por un título más descriptivo:
@@ -175,3 +367,4 @@
             }
         ...
     ```
+ 

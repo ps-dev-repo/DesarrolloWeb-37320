@@ -286,8 +286,8 @@ main section > div > ul > li > ul { /* lista dentro de otra lista */
   list-style-type: var(--estilo-lista-dentro-lista);
   padding-left: 0.5rem;
 }
-main section > div > ul > li > ul > li::first-letter {
-  padding-left: 0.5rem;
+main section > div > ul > li > ul > li {
+  text-indent: 0.5rem;
 }
 main section > div > ul#ulIdiomas {
   /* para la seccion Idiomas las celdas van a ser un poquito más angostas */

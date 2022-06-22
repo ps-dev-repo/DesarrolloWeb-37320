@@ -81,8 +81,8 @@ main {
                     list-style-type: var(--estilo-lista-dentro-lista);
                     padding-left: 0.5rem;
                     
-                    &>li::first-letter {
-                        padding-left: 0.5rem;
+                    &>li{
+                        text-indent: 0.5rem;
                     }
                 }
                 

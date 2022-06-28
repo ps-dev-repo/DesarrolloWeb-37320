@@ -110,7 +110,7 @@ main {
 
         &#experiencia {
             div>ul>li[title-card]{
-                    
+                /* efecto de Card Hover */
                 &>*{
                     transform: rotateY(180deg);
                     transform-style: preserve-3d;
@@ -123,8 +123,6 @@ main {
                     transition: transform 0.5s ease;
                 }
 
-
-                /* efecto de Card Hover */
                 position: relative;
                 /* se usa ::after para el Card-Front*/
                 /* y se usa ::before para darle un background de 100% x 100% */

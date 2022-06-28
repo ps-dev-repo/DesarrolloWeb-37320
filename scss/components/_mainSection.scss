@@ -170,16 +170,27 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, $gradiente-borde-1, $gradiente-borde-2);
     border-radius: 50%;
     width: 10rem;
     height: 10rem;
     max-height: 45vw;
     max-width: 45vw;
-    animation: rotar 5s infinite ease-in-out , radio 5s infinite linear;
-    box-shadow: 1px 0 10px;
-    z-index: -1;
-
+    position: relative;
+    
+    &::before{
+        content: "";
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        max-height: inherit;
+        max-width: inherit;
+        border-radius: inherit;
+        background: linear-gradient(45deg, $gradiente-borde-1, $gradiente-borde-2);
+        animation: rotar 5s infinite ease-in-out , radio 5s infinite linear;
+        box-shadow: 1px 0 10px;
+        z-index: -1;
+    }
+    
     #imagenPerfil {
         display: block;
         border-radius: 50%;
@@ -187,7 +198,6 @@ main {
         height: 9.5rem;
         max-height: 42.5vw;
         max-width: 42.5vw;
-        animation: rotar 5s infinite ease-in-out reverse;
     }
 }
 

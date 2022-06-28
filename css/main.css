@@ -220,7 +220,7 @@ main {
   justify-self: center;
   width: 100%;
 }
-main p, main li {
+main p, main li, main form label {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 0.74rem;
   line-height: 0.91rem;
@@ -358,6 +358,63 @@ main section#experiencia div > ul > li[title-card]::before {
 main section#experiencia div > ul > li[title-card]:hover::before, main section#experiencia div > ul > li[title-card]:hover::after {
   transform: rotateY(180deg);
   transition: transform 0.5s ease;
+}
+main section#proyectosLaborales {
+  /* efecto de timeline (para dimensiones mayores a Mobile) */
+}
+@media screen and (min-width: 415px) {
+  main section#proyectosLaborales > div {
+    position: relative;
+    justify-content: center;
+  }
+  main section#proyectosLaborales > div > ul {
+    grid-template-columns: repeat(2, 48%);
+    justify-content: center;
+    gap: 5.5rem;
+    column-gap: calc(5vw + 5px);
+    column-gap: 0;
+    position: relative;
+  }
+  main section#proyectosLaborales > div > ul > li {
+    padding: 0.5rem;
+    margin-left: 1.25rem;
+    grid-column: 2/3;
+    border: 2px solid rgb(147, 125, 209);
+    border-radius: 10px;
+    position: relative;
+  }
+  main section#proyectosLaborales > div > ul > li:nth-of-type(odd) {
+    transform-origin: -1.2rem; /* ajustado a ojo */
+    transform: rotateY(-180deg);
+  }
+  main section#proyectosLaborales > div > ul > li:nth-of-type(odd) > * {
+    transform-origin: center;
+    transform: rotateY(180deg);
+  }
+  main section#proyectosLaborales > div > ul > li::after {
+    content: attr(data-year);
+    position: absolute;
+    font-size: 2.1rem;
+    top: 7.5px; /* ajustado a ojo */
+    transform-origin: right;
+    transform: translateX(-7.5rem);
+  }
+  main section#proyectosLaborales > div > ul > li:nth-of-type(odd)::after {
+    content: attr(data-year);
+    transform-origin: center;
+    transform: rotateY(-180deg) translateX(7.5rem);
+  }
+  main section#proyectosLaborales > div > ul::after {
+    /* linea vertical del medio */
+    content: "";
+    position: absolute;
+    text-align: center;
+    width: 2.5px;
+    height: 100%;
+    background-color: rgb(147, 125, 209);
+    grid-column: 2;
+    z-index: -1;
+  }
 }
 
 .div_imagenPerfil {

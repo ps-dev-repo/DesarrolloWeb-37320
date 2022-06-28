@@ -220,6 +220,12 @@ main {
   justify-self: center;
   width: 100%;
 }
+main p, main li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.74rem;
+  line-height: 0.91rem;
+  line-height: 1.25rem;
+}
 main section {
   padding: 15px 5px;
 }

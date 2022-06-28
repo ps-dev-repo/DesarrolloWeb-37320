@@ -117,6 +117,7 @@ main {
         &#experiencia {
             div>ul>li[title-card]{
                 /* efecto de Card Hover */
+                perspective: 1500px;
                 &>*{
                     transform: rotateY(180deg);
                     transform-style: preserve-3d;
@@ -159,7 +160,7 @@ main {
                     background-color: $background-intercalado;
                 }
                 &:hover::before, &:hover::after{
-                    transform: rotateY(180deg);
+                    transform: rotateY(-180deg);
                     transition: transform 0.5s ease;
                 }
                 /* FIN efecto de Card Hover */

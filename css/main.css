@@ -314,6 +314,7 @@ main section#proyectos, main section#idiomas {
 }
 main section#experiencia div > ul > li[title-card] {
   /* efecto de Card Hover */
+  perspective: 1500px;
   position: relative;
   /* se usa ::after para el Card-Front*/
   /* y se usa ::before para darle un background de 100% x 100% */
@@ -356,7 +357,7 @@ main section#experiencia div > ul > li[title-card]::before {
   background-color: #1e1e1e;
 }
 main section#experiencia div > ul > li[title-card]:hover::before, main section#experiencia div > ul > li[title-card]:hover::after {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
   transition: transform 0.5s ease;
 }
 main section#proyectosLaborales {

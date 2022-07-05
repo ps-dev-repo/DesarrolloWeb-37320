@@ -117,7 +117,7 @@ main {
                     transform: rotateY(180deg);
                     transform-style: preserve-3d;
                     perspective: 100px;
-                    transition: transform 0.5s 0.5s ease;
+                    transition: transform 0.5s 0.8s ease;
                     backface-visibility: hidden;
                 }
                 &:hover>*{
@@ -141,7 +141,7 @@ main {
                     top: 0;
                     right: 0;
                     backface-visibility: hidden;
-                    transition: transform 0.5s 0.5s ease;
+                    transition: transform 0.5s 0.8s ease;
                     background-color: darken($background-intercalado, $amount: 3%);
                     /* efecto para la "esquina" redondeada */
                     border: 2px solid $background-intercalado;

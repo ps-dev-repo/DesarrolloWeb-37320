@@ -318,7 +318,7 @@ main section#experiencia div > ul > li[title-card] > * {
   transform: rotateY(180deg);
   transform-style: preserve-3d;
   perspective: 100px;
-  transition: transform 0.5s 0.5s ease;
+  transition: transform 0.5s 0.8s ease;
   backface-visibility: hidden;
 }
 main section#experiencia div > ul > li[title-card]:hover > * {
@@ -338,7 +338,7 @@ main section#experiencia div > ul > li[title-card]::before, main section#experie
   top: 0;
   right: 0;
   backface-visibility: hidden;
-  transition: transform 0.5s 0.5s ease;
+  transition: transform 0.5s 0.8s ease;
   background-color: #161616;
   /* efecto para la "esquina" redondeada */
   border: 2px solid #1e1e1e;

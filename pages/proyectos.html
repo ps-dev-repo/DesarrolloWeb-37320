@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- AOS  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="shortcut icon" href="../assets/img/perfil.jfif" type="image/png">
     
@@ -60,10 +62,10 @@
             <h2>Proyectos Laborales</h2>
             <div>
                 <ul>
-                    <li data-year="2021">
+                    <li data-year="2021" data-aos="fade-up">
                         <p>Sistema de gestión de vacaciones en la plataforma BonitaSoft BPM para empleados y contratados de INVAP</p>
                     </li>
-                    <li data-year="2019">
+                    <li data-year="2019" data-aos="fade-down">
                         <ul>
                             <li>Seguimiento inercial de personal policial</li>
                             <li>Medidor de calidad de aire</li>
@@ -71,13 +73,13 @@
                             <li>Sistema de medición y control de energía para edificios</li>
                         </ul>
                     </li>
-                    <li data-year="2018">
+                    <li data-year="2018" data-aos="flip-up">
                         <ul>
                             <li>Coordinación, ejecución y puesta en marcha de proyecto de Automatización de Planta Potabilizadora de Agua en Posadas, Mísiones.</li>
                             <li>Ejecución y puesta en marcha de proyecto de Automatización de Planta de Tratamiento de Efluentes en Resistencia, Chaco.</li>
                         </ul>
                     </li>
-                    <li data-year="2017">
+                    <li data-year="2017" data-aos="flip-down">
                         <p>
                             Proyecto Ballbot:<br>
                             <ul>
@@ -87,7 +89,7 @@
                             </ul>
                         </p>
                     </li>
-                    <li data-year="2016">
+                    <li data-year="2016" data-aos="fade-left">
                         <p>Desarrollo de software para sistemas embebidos.
                             Desarrollo de circuitos electrónicos.</p>
                         <ul>
@@ -96,7 +98,7 @@
                             <li>Diseño de fuentes de corriente conmutadas.</li>
                         </ul>
                     </li>
-                    <li data-year="2015">
+                    <li data-year="2015" data-aos="fade-right">
                         <p>Interface electrónica para protesis de mano embebido en Sistema DSPic.</p>
                     </li>
                 </ul>
@@ -138,5 +140,16 @@
         });
     </script>
 </body>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    //// obtengo el mediaQuery que uso para desactivar el timeline y lo reutilízo para desactivar la AoS ////
+    let mediaQuery = Array.prototype.slice.call(document.styleSheets[1].cssRules).filter(cssRule=> { return cssRule.type==4}).find(item=> {return item.cssRules[0].cssText.startsWith("main section#proyectosLaborales")}).conditionText;
+    AOS.init({
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        disable: (!window.matchMedia(mediaQuery).matches), // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        delay: 50, // values from 0 to 3000, with step 50ms
+        duration: 800, // values from 0 to 3000, with step 50ms
+        mirror: true // whether elements should animate out while scrolling past them
+    });
+</script>
 </html>
